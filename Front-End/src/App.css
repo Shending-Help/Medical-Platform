@@ -1,0 +1,38 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-image: url("bg-form.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0px;
+}
+
+form {
+  background-color: rgb(121, 43, 82);
+  padding: 30px 100px;
+  border-radius: 10px;
+  margin-top: 30px;
+  width: 350px;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+button{
+ width: 100%;
+ height: 50px;
+ border:none;
+ color: brown;
+ padding: 10px;
+ border-radius: 10px;
+ font-weight: bold;
+ font-size: 18px;
+ cursor: pointer;
+ margin-top: 15px;
+ margin-bottom: 20px;
+}

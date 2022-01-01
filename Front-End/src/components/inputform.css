@@ -1,0 +1,98 @@
+.Inputform {
+    display: flex;
+    flex-direction: column;
+    width:320px;
+    padding-bottom: 27px;
+    position: relative;
+}
+
+input {
+padding: 10px;
+margin:10px 0px;
+border-radius: 5px;
+border: 1px solid black;
+outline:none;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 12px;
+}
+
+span {
+    color:red;
+    font-size: 12px;
+    padding:3px;
+    visibility: hidden;
+}
+
+input:invalid[focus = "true"] {
+    border-color:  #e74c3c;
+}
+
+input:valid{
+    border-color:  #2ecc71;
+}
+
+input.birthday-signup{
+    border: 1px solid black;
+}
+
+ div[id = "4"] , div[id = "5"]
+{
+    width: 100px;
+ display: inline-block;
+}
+
+.female-signup , .male-signup
+{
+ display:inline-block;
+ margin-left: 20px; 
+ margin-bottom:20px;
+ font-size: 15px;
+}
+
+ input.gender-signup{
+    display:none;
+} 
+
+label.gender-signup{
+    text-align: center;
+    background-color: rgb(92, 5, 66);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding:5px;
+}
+
+i{
+    visibility:hidden;
+    position: absolute;
+    top:38px;
+    left:297px;
+}
+
+span{
+    position: absolute;
+    top:67px;
+}
+
+i[id = "45"] , i[id = "4"] , i[id = "5"] , i[id = "6"] {
+    display:none;
+}
+
+i.fa-check-circle{
+color:green;
+}
+i.fa-exclamation-circle{
+color:red;
+}
+
+input:invalid[focus = "true"] ~ span , input:invalid[focus = "true"] ~ i.fa-exclamation-circle {
+    visibility:visible;
+}
+
+input:valid ~ i.fa-check-circle {
+    visibility:visible; 
+}
