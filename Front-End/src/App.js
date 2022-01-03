@@ -34,10 +34,10 @@ const inputs = [
       className:"phone-signup",
       placeholder: "Type Your PhoneNumber",
       errorMessage:
-        "phone number must include 12 number",
+        "phone number must include 11 number",
       htmlFor: "Phone number",
       label: "Phone number",
-      pattern: "[0-9]{3}-[0-9]{2}-[0-9]{3}",
+      pattern: "^(00201|201|01)[0-2,5]{1}[0-9]{8}$",
       required: true,
     },
     {
