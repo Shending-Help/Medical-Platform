@@ -14,7 +14,7 @@ const Inputform = (props) => {
 return(
 <div className="Inputform" id = {id}>
    
-   <label className = {props.className}>{label}</label>
+   <label className = {props.className} htmlFor={props.htmlFor}>{label}</label>
 
    <input {...inputProps}  onChange={onChange}
    onBlur={handleFocus}    onFocus={onFocus}
