@@ -20,10 +20,10 @@ api/profile
 			 spechlization, degree, salary,rate,comment} >> for non exsting data assign none
 			 										
 			check type by id in url if doctor or admin and not owner 
-			{photoURL, name, id, bill, spechlization, degree, timeSlot,rate,comment}
+			{photoURL, name, id, bill, spechlization, degree,rate,comment}
 			
 			check type by id in url if patient and not owner or admin
-			{type,photoURL, name, id, phone, nextAppointment, bills, result, roshita}
+			{type,photoURL, name, id, phone}
 			
 	PATCH api/profile/:id
 		for sign in only
@@ -77,11 +77,25 @@ ________________________________________________________________________________
 	
 	
 api/result
+	GET api/results/:id >> id patient id
+		req >> {patientID}
+		if id::patient === reqesterID or id::doctor
+			res >> {resultID,...}
+		
 	GET api/result/:id >> result id
-	
+		req >> {resultID}
+		if id::patient === reqesterID or id::doctor who make reqest
+			res >> {patientName, date, labName,creator,editDate,edited,editBy, describtion:{discrb,photo}}
 	POST api/result
-	
+		if id::patient === reqesterID or id::doctor who make reqest
+			req >> {patientName, date, labName,creator, describtion:{discrb,photo}}
+			add id in backend
+		res >> {postResultStatus}
 	PATCH api/result/: >> result id
+	if id::patient === reqesterID or id::doctor who make reqest
+			req >> {patientName, date, labName,creator,editDate,edited,editBy, describtion:{discrb,photo}}
+			add id in backend
+		res >> {postResultStatus}
 	
 
 ______________________________________________________________________________________________________________			
@@ -89,49 +103,75 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________			
 	
 api/roshita
-	GET api/roshita/:id >> roshita id
-	
+	GET api/roshitas/:id :: patient id
+		if( (USER_ID===patientID) or (USER_ID===doctorID) )
+			get patientID
+			res {roshitaID,...}
+	GET api/roshita/:id :: roshita id
+		
+		if id::patient === reqesterID or id::doctor who make reqest
+			res >> {patientName, date, labName,creator,editDate,edited,editBy, describtion:{discrb,photo}}
 	POST api/roshita
-	
-	PATCH api/roshita/:id >> roshita id
-	
+		if id::patient === reqesterID or id::doctor who make reqest
+			req >> {patientName, date, labName,creator, describtion:{discrb,photo}}
+			add id in backend
+		res >> {postroshitaStatus}
+	PATCH api/roshita/: >> roshita id
+	if id::patient === reqesterID or id::doctor who make reqest
+			req >> {patientName, date, labName,creator,editDate,edited,editBy, describtion:{discrb,photo}}
+			add id in backend
+		res >> {postroshitaStatus}
+		
 
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
-	
+	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>return userID
 api/search
-	GET api/search
-	if patient or resp who made search
-		req json > {searcherID, searchKW} 
-			search for names or specialization
-		res json > {ID,...} >>... if many with same value >> must be doctor
-	if doctor who made search
-		req json > {searcherID, searchKW} 
-			search for names or patientID
-		res json > {ID,...}  >> ... if many with same value >> must be patient
-	if admin
-		req json > {searcherID, searchKW} 
+	GET api/search/:keyword
+		get userID and search from keyword
+		if patient search
+			search for DoctorNames or specialization
+			res {userID,...}
+		if doctor who made search
+			search for PatientNames or patientID
+			res {userID,...}
+		if admin
 			search for names or specialization or patientID or doctorID or respID
-		res json > {ID,...} >> ... if many with same value
+			res {userID,...}
 	
 
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
-	
-api/user/timeSlot
 
+api/timeSlot
+	GET api/timeSlots/:id :: id for doctor
+		get id from url
+		res {timeSlotID, ...}
+	GET api/timeSlot/:id
+		get id from url 
+		res {{timeSlotID,doctorID,date}}
+	POST api/timeSlot
+		req {doctorID,date}
+			if doctorID===USER_ID
+				add new slot
+		res {timeSlotAddStatus}
+	PATCH api/timeSlot
+		req {doctorID,timeSlotID,date}
+		if doctorID===USER_ID
+				edit slot
+		res {timeSlotAddStatus}
+	DELETE api/timeSlot
+		req {doctorID,timeSlotID,date}
+		if doctorID===USER_ID
+				delete slot
+		res {timeSlotAddStatus}
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
 	
-api/delete
 
-______________________________________________________________________________________________________________			
-______________________________________________________________________________________________________________			
-______________________________________________________________________________________________________________			
-	
 api/signup
 
 ______________________________________________________________________________________________________________			
@@ -140,20 +180,20 @@ ________________________________________________________________________________
 	
 api/login
 	POST api/login
-		req >> json >> {userName, password}
+		req >> {userName, password}
 		check username in emails and phones then check password
 		if auth secusseded 
-		res >>  {token, authState)
+			res >>  {token, authState, USER_ID}
 		if auth faild
-		res >> {authState}
+			res >> {authState}
 	POST api/login/forget
-		req >> json >> {userName} :: userName email or phone
+		req >> {userName} :: userName email or phone
 	POST api/login/reset
-		req >> json >> {resetCode}
-		res >> json >> {resetCodeOK}
+		req >> {resetCode}
+		res >> {resetCodeOK}
 	POST api/login/newPWd
-		req >> json >> {newPssword}		
-		
+		req >> {newPssword}		
+		res >> {token, authState, USER_ID}
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
 ______________________________________________________________________________________________________________			
