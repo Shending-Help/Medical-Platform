@@ -1,0 +1,84 @@
+APIs
+api/home
+	GET api/home
+		for non sign-up get 10 of top rated doctor details
+			check if not authcated return 10 of top rated doctor details as json
+			{id,name,photo,speciliaztion,avalble-time-slot,rate,bill,authcated}
+		for sign up dactors get 
+			
+api/profile
+	GET api/profile/:id
+		for sign in only
+		return profile data as json depend on id
+			
+			check type by id in url if owner of account OR admin >> id===acoundID
+			{premssion, type, photoURL, name, id, phone, email, nextAppointment, bills, result, roshita,
+			 spechlization, degree, timeSlot, salary,rate,comment} >> for non exsting data assign none
+			 										
+			check type by id in url if doctor and not owner or admin
+			{type, photoURL, name, id, bill, spechlization, degree, timeSlot,rate,comment}
+			
+			check type by id in url if patient and not owner or admin
+			{type,photoURL, name, id, phone, nextAppointment, bills, result, roshita}
+			
+	PATCH api/profile/:id
+		for sign in only
+		update profile data as json depend on id
+			check type by id in url if owner of account OR admin >> id===acoundID
+			you willl recive json
+			{photoURL, name, phone, email, nextAppointment, bills, result, roshita,
+			 spechlization, degree, timeSlot, salary,rate,comment,password}
+			 default none for no update vaule
+______________________________________________________________________________________________________________	
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________					
+api/appiontment
+
+	GET api/appiontments/:id  >> id as userid
+		if (id doctor) or any admin or any resp
+			get all appointment for doctor id
+			{appointID:appointID} >>   appointID is array of appointIDs
+		if (id patient) or any admin or any resp
+			get all appointment for patent id
+			{appointID:appointID} >>   appointID is array of appointIDs
+			
+	GET api/appiontment/:id >> id as appointID
+		if (id doctor) or any admin or any resp >> who send reqest
+			get appointment for doctor id
+			{{appointID, doctorID, patientID, creatorID,date,bill,status},...}
+		if (id patient) or any admin or any resp
+			get appointment for patent id
+			{{appointID, doctorID, patientID, creatorID,date,bill,status},...}
+			  
+	POST api/appointment/:id >> id as patient or resp
+		if id patient or resp who send req
+			post appointment details
+			{appointID, doctorID, patientID, creatorID,date,bill,status} 
+	
+	PATCH api/appointment/:id >> id as appointID
+		if id patient or resp who send req
+			edit appointment details
+			{appointID, doctorID, patientID, creatorID,date,bill,status}
+			none for no update
+	
+	DELETE api/appointment/:id 
+		if id patient or resp who send req
+			delete appointment details
+			{status:'deledted'}
+				we will note delete it just turn staus to deleted
+	
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
+	
+api/result
+api/roshita
+api/search
+api/user
+api/delete
+api/signup
+api/login
+api/logout
+
+
