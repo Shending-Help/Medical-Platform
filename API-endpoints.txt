@@ -5,18 +5,22 @@ api/home
 			check if not authcated return 10 of top rated doctor details as json
 			{id,name,photo,speciliaztion,avalble-time-slot,rate,bill,authcated}
 		for sign up dactors get 
-			
+
+______________________________________________________________________________________________________________	
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________	
+
 api/profile
 	GET api/profile/:id
 		for sign in only
 		return profile data as json depend on id
 			
 			check type by id in url if owner of account OR admin >> id===acoundID
-			{premssion, type, photoURL, name, id, phone, email, nextAppointment, bills, result, roshita,
-			 spechlization, degree, timeSlot, salary,rate,comment} >> for non exsting data assign none
+			{photoURL, name, id, phone, email,bill,
+			 spechlization, degree, salary,rate,comment} >> for non exsting data assign none
 			 										
-			check type by id in url if doctor and not owner or admin
-			{type, photoURL, name, id, bill, spechlization, degree, timeSlot,rate,comment}
+			check type by id in url if doctor or admin and not owner 
+			{photoURL, name, id, bill, spechlization, degree, timeSlot,rate,comment}
 			
 			check type by id in url if patient and not owner or admin
 			{type,photoURL, name, id, phone, nextAppointment, bills, result, roshita}
@@ -73,12 +77,89 @@ ________________________________________________________________________________
 	
 	
 api/result
+	GET api/result/:id >> result id
+	
+	POST api/result
+	
+	PATCH api/result/: >> result id
+	
+
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
 api/roshita
+	GET api/roshita/:id >> roshita id
+	
+	POST api/roshita
+	
+	PATCH api/roshita/:id >> roshita id
+	
+
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
 api/search
-api/user
+	GET api/search
+	if patient or resp who made search
+		req json > {searcherID, searchKW} 
+			search for names or specialization
+		res json > {ID,...} >>... if many with same value >> must be doctor
+	if doctor who made search
+		req json > {searcherID, searchKW} 
+			search for names or patientID
+		res json > {ID,...}  >> ... if many with same value >> must be patient
+	if admin
+		req json > {searcherID, searchKW} 
+			search for names or specialization or patientID or doctorID or respID
+		res json > {ID,...} >> ... if many with same value
+	
+
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
+api/user/timeSlot
+
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
 api/delete
+
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
 api/signup
+
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
 api/login
+	POST api/login
+		req >> json >> {userName, password}
+		check username in emails and phones then check password
+		if auth secusseded 
+		res >>  {token, authState)
+		if auth faild
+		res >> {authState}
+	POST api/login/forget
+		req >> json >> {userName} :: userName email or phone
+	POST api/login/reset
+		req >> json >> {resetCode}
+		res >> json >> {resetCodeOK}
+	POST api/login/newPWd
+		req >> json >> {newPssword}		
+		
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+______________________________________________________________________________________________________________			
+	
 api/logout
+	POST api/logout
+		logout form account
 
 
