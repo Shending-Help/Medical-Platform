@@ -15,7 +15,7 @@ const App = () => {
 
 const inputs = [
     {
-      id: 111,
+      id: "Username-signup",
       name: "username",
       type: "text",
       className: "username-signup",
@@ -28,7 +28,7 @@ const inputs = [
       required: true,
     },
     {
-      id: 112,
+      id: "Phone-signup",
       name: "phone",
       type: "tel",
       className:"phone-signup",
@@ -37,11 +37,11 @@ const inputs = [
         "phone number must include 11 number",
       htmlFor: "Phone number",
       label: "Phone number",
-      pattern: "^(00201|201|01)[0-2,5]{1}[0-9]{8}$",
+      pattern: "^(00201|0201|201|01)[0-2,5]{1}[0-9]{8}$",
       required: true,
     },
     {
-      id: 113,
+      id: "Email-signup",
       name: "email",
       type: "email",
       className:"email-signup",
@@ -52,23 +52,22 @@ const inputs = [
       required: true,
     },
     {
-      id: 1145,
+      id: "Gender-signup",
       className: "gender-signup",
       htmlFor: "Gender",
       label: "Gender",
     },
     {
-      id: 114,
+      id: "Male-signup",
       name: "gender",
       type: "radio",
       className: "male-signup",
       htmlFor: "male",
       value: "Male",
-      htmlFor: "male",
       label: "male",
     },
     {
-      id: 115,
+      id: "Female-signup",
       name: "gender",
       type: "radio",
       value: "Female",
@@ -77,7 +76,7 @@ const inputs = [
       label: "female",
     },
     {
-      id: 116,
+      id: "Birthday-signup",
       name: "birthday",
       type: "date",
       className:"birthday-signup",
@@ -86,7 +85,7 @@ const inputs = [
       label: "Birthday",
     },
     {
-      id: 117,
+      id: "Password-signup",
       name: "password",
       type: "password",
       className:"password-signup",
@@ -99,7 +98,7 @@ const inputs = [
       required: true,
     },
     {
-      id: 118,
+      id: "Confirmpassword-signup",
       name: "confirmPassword",
       type: "password",
       className:"confirmpassword-signup",
@@ -131,7 +130,10 @@ return (
     <hr/>
     {inputs.map((input) =>  (
 
-     <Inputform key ={input.id}   {...input}  value={values[input.name]} value = {input.value} onChange={onChange}/> 
+     <Inputform key ={input.id}   {...input} 
+      value={values[input.name]}
+      // eslint-disable-next-line
+      value = {input.value} onChange={onChange}/> 
      
     ))}
     

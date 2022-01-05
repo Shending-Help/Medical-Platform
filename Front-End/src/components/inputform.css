@@ -41,40 +41,40 @@ input:valid{
 input.birthday-signup{
     border: 3px solid gray;
 }
-div[id = "111"]            /* div for marign top of username */
+div[id = "Username-signup"]            /* div for marign top of username */
 {
     margin-top: 20px;
 }
- div[id = "114"] , div[id = "115"]   /* div for female and male */
+ div[id = "Male-signup"] , div[id = "Female-signup"]   /* div for female and male */
 {
     width: 100px;
     display: inline-block;
    bottom: 100px;
     left:450px;
 }
-div[id = "1145"]{                  /* Gender label */
+div[id = "Gender-signup"]{                  /* Gender label */
     float: right;
     bottom: 80px;
     left:373px;
 
 }
-div[id = "113"] {                   /* Email */
+div[id = "Email-signup"] {                   /* Email */
     float:right;
     bottom: 219px;
     left:27px;
 }
-div[id = "116"]                     /* birthday */
+div[id = "Birthday-signup"]                     /* birthday */
 {
     float: right;
     bottom: 140px;
     left:27px;
 }
-div[id = "117"]                     /* password */
+div[id = "Password-signup"]                     /* password */
 {
     bottom: 138px;
     margin-bottom: 20px;         
 }
-div[id = "118"]                   /* confirm Password */
+div[id = "Confirmpassword-signup"]                   /* confirm Password */
 {
     bottom: 138px;
 }
@@ -116,7 +116,8 @@ span{
     top:80px;
 }
 
-i[id = "1145"] , i[id = "114"] , i[id = "115"] , i[id = "116"] {
+i[id = "Gender-signup"] , i[id = "Male-signup"] , i[id = "Female-signup"] 
+, i[id = "Birthday-signup"] {
     display:none;
 }
 
