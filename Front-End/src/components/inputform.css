@@ -38,72 +38,46 @@ input:focus{
 input:valid{
     border: 3px solid #2ecc71;
 }
-input.birthday-signup{
-    border: 3px solid gray;
+input.birthday-signup , input.upload-signup
+, input.birthday-signupD , input.upload-signupD
+{
+    border:3px solid #5e6278;
 }
 div[id = "Username-signup"]            /* div for marign top of username */
+, div[id = "Username-signupD"]   
 {
     margin-top: 20px;
 }
- div[id = "Male-signup"] , div[id = "Female-signup"]   /* div for female and male */
-{
-    width: 100px;
-    display: inline-block;
-   bottom: 100px;
-    left:450px;
-}
-div[id = "Gender-signup"]{                  /* Gender label */
-    float: right;
-    bottom: 80px;
-    left:373px;
-
-}
-div[id = "Email-signup"] {                   /* Email */
-    float:right;
+div[id = "Email-signup"] , div[id = "Birthday-signup"]     /* Email and birthday */
+{                   
     bottom: 219px;
-    left:27px;
+    left:400px;
 }
-div[id = "Birthday-signup"]                     /* birthday */
-{
-    float: right;
-    bottom: 140px;
-    left:27px;
+div[id = "Email-signupD"] , div[id = "Birthday-signupD"]{
+   left:270px;
+   bottom: 219px;
 }
-div[id = "Password-signup"]                     /* password */
+div[id = "Password-signup"] ,  div[id = "Password-signupD"]      /* password */
 {
-    bottom: 138px;
+    bottom: 225px;
     margin-bottom: 20px;         
 }
-div[id = "Confirmpassword-signup"]                   /* confirm Password */
+div[id = "Password-signup"] span , div[id = "Password-signupD"] span{
+    width:300px
+}
+div[id = "Confirmpassword-signup"]                 /* confirmpassword */
+, div[id = "Confirmpassword-signupD"]           
 {
-    bottom: 138px;
+    bottom: 235px;
+    margin-bottom: 20px;         
 }
-.female-signup , .male-signup
+
+div[id = "Upload-signup"]                    /* upload image */
+, div[id = "Upload-signupD"] 
 {
- display:inline-block;
- margin-left: 20px; 
- margin-bottom:20px;
- font-size: 15px;
- box-shadow:none;
- width: 80px;
- margin: 3px;
-}
-input[type=radio] {
-    border: 0px;
-    width: 100%;
-    height: 2em;
-}
-input.gender-signup{
-    display:none;
-}
-label.gender-signup{
-    text-align: center;
-    background-color: #1c5e59;
-    width: 330px;
-    border-radius: 5px;
-    padding:5px;
-    font-size: 20px;
-    box-shadow: 6px 6px 6px 6px #1b3b39;
+    bottom: 400px;
+    left:  400px;
+    margin-top: 10px;         
 }
 i{
     visibility:hidden;
@@ -116,8 +90,9 @@ span{
     top:80px;
 }
 
-i[id = "Gender-signup"] , i[id = "Male-signup"] , i[id = "Female-signup"] 
-, i[id = "Birthday-signup"] {
+i[id = "Birthday-signup"] , i[id = "Upload-signup"] , 
+i[id = "Birthday-signupD"] , i[id = "Upload-signupD"]
+{
     display:none;
 }
 
@@ -132,4 +107,13 @@ input:invalid[focus = "true"] ~ i.fa-exclamation-circle
 ,input:valid ~ i.fa-check-circle
  {
     visibility:visible;
+}
+
+#doctor-form input  ,#doctor-form input  span{
+    width:220px;
+}
+
+#doctor-form i.fa-exclamation-circle , #doctor-form i.fa-check-circle
+{
+  left: 220px;
 }

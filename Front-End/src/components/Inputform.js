@@ -9,9 +9,10 @@ const Inputform = (props) => {
       setFocused(true)
    };
    const onFocus = (e) => { 
-      inputProps.name==="confirmPassword" && setFocused(true)
+      inputProps.name==="confirmPassword" && setFocused(true);
    };
 return(
+   
 <div className="Inputform" id = {id}>
    
    <label className = {props.className} htmlFor={props.htmlFor}>{label}</label>

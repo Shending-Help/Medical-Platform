@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: center;
   margin: 0px;
+  position: relative;
 }
 
 form {
@@ -15,9 +16,9 @@ form {
   padding: 30px 100px;
   padding-top: 10px;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
   width: 712px;
-  height:560px;
+  height:530px;
   box-shadow: 6px 6px 6px 6px #1b3b39;
 }
 
@@ -28,11 +29,10 @@ h1{
   font-size: 34px;
   font-weight: 700;
 }
-
-button{
+.patient-signup , .doctor-signup{
  position: relative;
  width: 400px;
- height: 70px;
+ height: 50px;
  border:none;
  color: #20524e;
  padding: 10px;
@@ -42,12 +42,119 @@ button{
  cursor: pointer;
  margin-top: 15px;
  margin-bottom: 20px;
- left:377px;
- bottom:250px;
  background-color: #b0eed9;
 }
-
+.patient-signup{
+left:377px;
+bottom:515px;
+}
+.doctor-signup{
+  left:  377px;
+  bottom: 999px;
+ }
 button:hover{
   background-color:#e3e3e3;
   border-color:#e3e3e3;
+}
+.choose {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #20524e;
+  padding: 5px 5px;
+  border-radius: 10px;
+  width: 800px;
+  height: 100px;
+  box-shadow: 6px 6px 6px 6px #1b3b39; 
+  margin: 0px;
+}
+#choose-patient , #choose-doctor{
+ color: #20524e;
+ padding: 10px;
+ width: 100%;
+ border-radius: 10px;
+ font-weight: bold;
+ font-size: 18px;
+ cursor: pointer;
+ margin-top: 15px;
+ margin-bottom: 20px;
+}
+#Gender-signup {
+  position: relative;
+  padding: 10px;
+  margin:10px 0px;
+  border-radius: 10px;
+  outline:none;
+  width: 357px;
+  height: 42px;
+  left:  390px;
+  bottom: 620px;
+}
+#Gender-signupD  {
+  position: relative;
+  left:  262px;
+  bottom: 851px;
+  outline:none;
+  padding: 10px;
+  height: 42px;
+  width:243px;
+}
+
+#Specialization-signupD , #Degree-signupD
+{
+  position:relative;
+  left:  540px;
+  bottom: 1127px;
+  margin-bottom: 60px;
+}
+#Specialization-signupD {
+  padding: 10px;
+  height: 40px;
+  width:243px;
+  left:  530px;
+}
+
+#Gender-signup label , #Gender-signupD label
+,#Specialization-signupD label{
+  color: white; 
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  width: 100%;  
+}
+#Gender-signupD label
+,#Specialization-signupD label ,
+#Gender-signup label
+{
+margin-bottom: 10px;
+}
+#Gender-signup select ,  #Gender-signupD select
+,#Specialization-signupD select {
+  font-size: 15px;
+  font-weight: 500;
+  width:  100%;
+  height: 100%;
+  font-style: italic;
+  padding: 2px;
+  background-color: #f5f8fa;
+  border:3px solid #5e6278;
+  box-shadow: 3px 3px 3px 3px #1b3b39;
+  border-radius: 10px;
+  outline: none;
+}
+#Gender-signup option , #Gender-signupD option{
+ text-align: center;
+}
+#Degree-signupD input{
+  border:3px solid #5e6278;
+}
+#Upload-signupD{
+ position: relative;
+ left:  540px;
+ bottom: 485px;
+ height: 330px;
+}
+#selectS   /* select option names */
+ {          
+  color: grey;
 }
