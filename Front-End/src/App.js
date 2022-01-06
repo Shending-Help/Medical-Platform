@@ -189,6 +189,16 @@ const onChange = (e)=>{
    setValues({...values,[e.target.name]: e.target.value});
 }
 
+const onClickP = () =>{
+  setValues("");
+  setCount(1);
+}
+
+const onClickD = () =>{
+  setValues("");
+  setCount(2);
+}
+
 console.log(values)
 
 return (
@@ -199,10 +209,10 @@ return (
 
     <button id="choose-patient" type = "button" 
     onClick=
-    {() => setCount(1)}>Patient</button>
+    {onClickP}>Patient</button>
     <button id="choose-doctor" type = "button"
     onClick=
-    {() => setCount(2)}>Doctor</button>
+    {onClickD}>Doctor</button>
    </div>
 
    {count === 1 ? (
