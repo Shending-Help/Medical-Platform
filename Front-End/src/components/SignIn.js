@@ -15,7 +15,7 @@ const inputs = [
       id: "Username-signin",
       name: "username",
       type: "text",
-      className: "username-signup",
+      className: "username-signin",
       placeholder: "Type Your Username",
       errorMessage:
         "Username shouldn't include any special character!",
