@@ -30,4 +30,4 @@ return(
 
 }
 
-export default Inputform
+export default Inputform;

@@ -4,7 +4,8 @@
     padding-bottom: 27px;
     position: relative;
 }
-input {
+.Sign-form  input
+{
 padding: 10px;
 margin:10px 0px;
 border-radius: 10px;
@@ -15,7 +16,7 @@ border:3px solid #5e6278;
 box-shadow: 6px 6px 6px 6px #1b3b39;
 width: 330px;
 }
-label {
+.Sign-form label {
     display: flex;
     flex-direction: column;
     color: white;
@@ -23,23 +24,34 @@ label {
     font-weight: 500;
     font-style: italic;
 }
-span {
+.Sign-form  span {
     color:red;
     font-size: 12px;
     padding:3px;
     visibility: hidden;
+    position: absolute;
+    top:80px;
 }
-input:invalid[focus = "true"] {
+#patient-form input:invalid[focus = "true"], 
+#doctor-form  input:invalid[focus = "true"]
+ {
     border: 3px solid  #e74c3c;
 }
-input:focus{
+#patient-form input:focus, 
+#doctor-form  input:focus
+{
     border: 3px solid rgb(47, 35, 77);
 }
-input:valid{
+#patient-form input:valid, 
+#doctor-form  input:valid
+{
     border: 3px solid #2ecc71;
 }
-input.birthday-signup , input.upload-signup
-, input.birthday-signupD , input.upload-signupD
+#patient-form input.birthday-signup ,
+#patient-form input.upload-signup
+,#doctor-form input.birthday-signupD ,
+#doctor-form input.upload-signupD ,
+#doctor-form input.Degree-Signup
 {
     border:3px solid #5e6278;
 }
@@ -79,15 +91,13 @@ div[id = "Upload-signup"]                    /* upload image */
     left:  400px;
     margin-top: 10px;         
 }
-i{
+#patient-form i, 
+#doctor-form  i,
+#Signin-form  i{
     visibility:hidden;
     position: absolute;
     top:45px;
     left:327px;
-}
-span{
-    position: absolute;
-    top:80px;
 }
 
 i[id = "Birthday-signup"] , i[id = "Upload-signup"] , 
