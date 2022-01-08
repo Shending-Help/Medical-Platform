@@ -13,6 +13,16 @@ const App = () => {
     confirmPassword: "",
     degree: "",
   });
+
+  const initialState = {
+    username: "",
+    phone: "",
+    email: "",
+    birthday: "",
+    password: "",
+    confirmPassword: "",
+    degree: "",
+  };
  
   const [count, setCount] = useState(1);
 
@@ -190,12 +200,12 @@ const onChange = (e)=>{
 }
 
 const onClickP = () =>{
-  setValues("");
+  setValues(...initialState);
   setCount(1);
 }
 
 const onClickD = () =>{
-  setValues("");
+  setValues(...initialState);
   setCount(2);
 }
 
