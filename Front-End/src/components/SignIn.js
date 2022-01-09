@@ -2,6 +2,7 @@ import './signin.css';
 import './signup.css';
 import Inputform from './Inputform';
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const SignIn = () => {
 
@@ -67,7 +68,8 @@ return (
     <div id = 'Signin-button'>
     <button className="signin-button"  type = "submit">Sign in</button>
     </div>
-    <div id="Signup-link"> Not a member ? <a href="#">SignUp</a>
+
+    <div id="Signup-link"> Not a member ? <Link to='/signup'>SignUp</Link>
     &nbsp;&nbsp;&nbsp;Forget Password ? <a href="#">Click Here</a></div>
 
     </form>

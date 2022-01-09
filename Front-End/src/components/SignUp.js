@@ -1,6 +1,8 @@
 import { useState } from "react";
 import './signup.css';
 import Inputform from './Inputform';
+import { Link } from "react-router-dom";
+
 
 const SignUp = () => {
 
@@ -244,7 +246,7 @@ return (
               <option value = "male">Male</option>
               <option value = "female">Female</option>
             </select>
-     <div id="Signin-linkP"> Do you have an Account ? <a href="#">Sign in</a></div>
+     <div id="Signin-linkP"> Do you have an Account ? <Link to='/signin'>Sign in</Link></div>
     </div>
 
     <button className="patient-signup" type = "submit">SignUp</button>

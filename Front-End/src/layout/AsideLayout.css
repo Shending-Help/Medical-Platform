@@ -1,0 +1,28 @@
+.asideLayout-container {
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 1fr 2.9fr 0.5fr 0.1fr;
+    gap: 20px 5%;
+    justify-items: stretch;
+}
+.asideLayout-top {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.asideLayout-borron {
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.asideLayout-ele {
+    padding:5px 10px ;
+    border-bottom: 1px solid black;
+    box-shadow: -2px 2px #808080;
+}
+.asideLayout-ele>a{
+    text-decoration: none;
+}

@@ -1,0 +1,69 @@
+.NavLayout-container {
+    padding: 7px;
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-template-columns: 0.5fr 1.7fr 0.8fr;
+    grid-template-rows: 1fr;
+    gap: 20px 3%;
+    grid-template-areas: "NavLayout-logo NavLayout-saerch NavLayout-lest";
+    justify-content: center;
+    align-content: center;
+    justify-items: stretch;
+    align-items: center;
+    height: 4vh;
+    line-height: calc(4vh - 7px);
+    font-size: larger;
+    text-align: center;
+}
+.NavLayout-saerch {
+    border-radius: 1rem;
+    overflow: hidden;
+    grid-area: NavLayout-saerch;
+    background-color: cornsilk;
+    height: 100%;
+    border: 3px solid #B297CA;
+    box-shadow: 0px 2px rgb(207, 207, 207);
+
+}
+.NavLayout-saerch > form {
+    height: 100%;
+}
+.NavLayout-saerch > form > input {
+    padding: 0 20px;
+    width: 85%;
+    height: 100%;
+    border: none;
+}
+.NavLayout-saerch > form > button {
+    display: inline-block;
+    color: #fff;
+    width: 15%;
+    height: 100%;
+    border: none;
+    background-color: #0fabff;
+    font-size: 18px;
+}
+.NavLayout-last {
+    height: 100%;
+    grid-area: NavLayout-lest;
+}
+.NavLayout-last > a {
+    color: #fff;
+    font-weight: 500;
+    margin: auto;
+    display: block;
+    height: 100%;
+    line-height: 4vh;
+    text-align: center;
+    width: 60%;
+    text-decoration: none;
+    background-color: #0FAAFF;
+    font-size: 1.4rem;
+    box-shadow: 2px 3px #808080;
+}
+.NavLayout-logo > a {
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-family: "Lato", sans-serif;
+    grid-area: NavLayout-logo;
+}

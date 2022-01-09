@@ -1,0 +1,61 @@
+.AppointmentDetails {
+    background-color: #fff;
+    border: 5px solid #0fabff;
+    /* border-bottom:none ; */
+    overflow: hidden;
+    border-radius: 10px;
+    /* padding: 10px; */
+    box-shadow: 2px 3px #808080;
+        font-size: 16px;
+
+}
+.AppointmentDetails > .header {
+    background-color: #0fabff;
+    border: 1px solid #0fabff;
+    padding: 5px;
+
+}
+.AppointmentDetails > .container {
+    padding: 10px;
+    display: grid;
+    grid-auto-flow: row dense;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 0.2fr 1.8fr;
+    grid-template-rows: 1fr;
+    gap: 20px 5%;
+    grid-template-areas: "CardPhoto CardDetails";
+    justify-items: stretch;
+}
+
+.AppointmentDetails > .CardPhoto {
+    grid-area: CardPhoto;
+}
+.AppointmentDetails > .CardDetails {
+    grid-area: CardDetails;
+}
+.AppointmentDetails >.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+
+}
+.AppointmentDetails >.footer> button{
+    width: 35%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0 3px #d1cece;
+    border-radius: 5px;
+    border:2px solid #dbdbdb;
+
+
+}
+.AppointmentDetails >.footer> .left-btn{
+background-color: #187FF5;
+color: #fff;
+}
+.AppointmentDetails >.footer> .right-btn{
+    background-color: #fff;
+    }
+

@@ -1,13 +1,18 @@
-import SignIn from './components/SignIn';
-import SignUp from './components/SignUp';
-const App = () => {
+import NavLayout from './layout/NavLayout'
+import AsideLayout from './layout/AsideLayout'
+import MainLayout from './layout/MainLayout'
+import { AUTH } from './auth/authTest'
 
-return (
+import './App.css';
 
-  <div className="App">
-  <SignIn/>
-  </div>
+function App() {
+  return (
+    <div className="App container">
+      <NavLayout className="NavLayout" auth={AUTH}></NavLayout>
+      <AsideLayout className="SideLayout" auth={AUTH}></AsideLayout>
+      <MainLayout className="MainLayout"></MainLayout>
+    </div>
   );
-};
+}
 
 export default App;
